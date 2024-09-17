@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Coffee Mug by Hari",
+    "description": "Its my favorite Mug designed with lot of effort",
+    "start_price": 20.75,
+    "reserve_price": 30
+  },
+  {
+    "title": "Coffee Mug by Kyle",
+    "description": "Its my favorite Mug",
+    "start_price": 30.75,
+    "reserve_price": 31
+  },
+  {
+    "title": "Coffee Mug by Neel",
+    "description": "Its my favorite Mug",
+    "start_price": 10.50,
+    "reserve_price": 15
+  },
+  {
+    "title": "Coffee Mug by Girish",
+    "description": "Its my favorite Mug",
+    "start_price": 25.40,
+    "reserve_price": 25
+  },
+  {
+    "title": "Coffee Mug by Philip",
+    "description": "Its my favorite Mug",
+    "start_price": 30.5,
+    "reserve_price": 30
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "name": "cli_tool",
+  "version": "1.0.0",
+  "description": "CLI tool to interact with MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cli.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "todos": "./index.js"
+  },
+  "author": "Hari",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.3.6",
+    "mongodb": "^4.17.2"
+  }
+}
