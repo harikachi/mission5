@@ -3,9 +3,12 @@
 import { MongoClient } from 'mongodb';
 import inquirer from 'inquirer';
 import fs from 'fs';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // MongoDB connection URL
-const uri = "mongodb://testuser:test1234@127.0.0.1:27017";
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
 async function connectToDB() {
