@@ -1,7 +1,7 @@
 This is a CLI to perform the CRUD operations on MongoDB using Node.js
 
 Install the required libraries
-npm install mongodb, inquirer, fs
+npm install mongodb, inquirer, fs, dotenv
 
 run the application using ./cli.mjs command
 

@@ -34,5 +34,35 @@
     "description": "This is the best mirror you can find",
     "start_price": 10.75,
     "reserve_price": 15
+  },
+  {
+    "title": "Helmet",
+    "description": "Helmet for sale in good condition, size L",
+    "start_price": 37.50,
+    "reserve_price": 38
+  },
+  {
+    "title": "Lawn Mower",
+    "description": "Used lawn mower for sale pretty good condition",
+    "start_price": 100,
+    "reserve_price": 95
+  },
+  {
+    "title": "Samsung Galaxy S10",
+    "description": "A samsung galaxy s10 in good condition",
+    "start_price": 208,
+    "reserve_price": 210
+  },
+  {
+    "title": "Sony TV 55 inch",
+    "description": "Brand new Sony TV 55 inch for sale with warranty",
+    "start_price": 555.75,
+    "reserve_price": 550
+  },
+  {
+    "title": "Tent for 4",
+    "description": "Tent in good condition for 4 people",
+    "start_price": 40.75,
+    "reserve_price": 40
   }
 ]

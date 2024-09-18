@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Items Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        #search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #search-container input {
+            padding: 10px;
+            width: 300px;
+        }
+        #search-container button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search for Order Items</h1>
+
+    <div id="search-container">
+        <input type="text" id="searchTerm" placeholder="Enter order title to search">
+        <button onclick="searchOrders()">Search</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Start Price</th>
+                <th>Reserve Price</th>
+            </tr>
+        </thead>
+        <tbody id="order-items">
+            <!-- Order items will be injected here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // Base URL of the API endpoint (adjust it as necessary)
+        const apiUrl = 'http://localhost:5002/api/orders';
+
+        // Function to search order items based on a search term
+        async function searchOrders() {
+            // Get the search term from the input field
+            const searchTerm = document.getElementById('searchTerm').value.trim();
+
+            // Construct the API URL with the search query (if provided)
+            const queryUrl = searchTerm ? `${apiUrl}?search=${encodeURIComponent(searchTerm)}` : apiUrl;
+
+            try {
+                // Fetch the order items from the API with the search query
+                const response = await fetch(queryUrl);
+                const orders = await response.json();
+
+                // Get the table body element
+                const tableBody = document.getElementById('order-items');
+
+                // Clear any existing rows in the table body
+                tableBody.innerHTML = '';
+
+                // Check if any orders were returned
+                if (orders.length === 0) {
+                    const noResultsRow = document.createElement('tr');
+                    noResultsRow.innerHTML = `<td colspan="5" style="text-align:center;">No order items found with this title</td>`;
+                    tableBody.appendChild(noResultsRow);
+                    return;
+                }
+
+                // Loop through each order and create table rows
+                orders.forEach(order => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td>${order.title}</td>
+                        <td>${order.description}</td>
+                        <td>${order.start_price}</td>
+                        <td>${order.reserve_price}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching order items:', error);
+            }
+        }
+
+        // Automatically fetch and display all order items when the page loads
+        //window.onload = searchOrders;
+    </script>
+
+</body>
+</html>
